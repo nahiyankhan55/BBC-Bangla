@@ -24,7 +24,7 @@ const loadCategory = () => {
 const showCategory = (categories) => {
   categories.forEach((cat) => {
     categoryContainer.innerHTML += `
-            <li id="${cat.id}" class="hover:border-b-4 hover:border-red-600 border-red-600 cursor-pointer">${cat.title}</li>
+            <li id="${cat.id}" class="hover:border-b-4 hover:border-green-600 border-green-600 cursor-pointer">${cat.title}</li>
         `;
   });
 
@@ -65,7 +65,7 @@ const showNewsByCategory = (articles) => {
   newsContainer.innerHTML = "";
   articles.forEach((article) => {
     newsContainer.innerHTML += `
-        <div class="border  border-gray-300 rounded-lg">
+        <div class="border  border-green-400 rounded-lg">
             <div>
              <img src="${article.image.srcset[5].url}"/>
             </div>
@@ -160,26 +160,26 @@ const showLoading = () => {
 
 const showError = () => {
     newsContainer.innerHTML = `
-     <div class="bg-red-500 p-3 ">Something went wrong</div>
+     <div class="bg-green-500 p-3 ">Something went wrong</div>
     `
 }
 
 const showEmptyMessage = () => {
           newsContainer.innerHTML = `
-     <div class="bg-orange-500 p-3 ">No news found for this category</div>
+     <div class="bg-green-500 p-3 ">No news found for this category</div>
     `
 }
 loadCategory();
 loadNewsByCategory("main");
 
-// const loadCategoryAsync = async () => {
-//   try {
-//     const res = await fetch("https://news-api-fs.vercel.app/api/categorie");
-//     const data = await res.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+const loadCategoryAsync = async () => {
+  try {
+    const res = await fetch("https://news-api-fs.vercel.app/api/categorie");
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// loadCategoryAsync();
+loadCategoryAsync();
