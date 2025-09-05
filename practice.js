@@ -1,4 +1,4 @@
-// /**
+/**
  * 1. api - fetch()
  * 2. forEach
  * 3. map
@@ -51,62 +51,61 @@ const data = [
   },
 ];
 
- for(let i=0; i<data.length; i++) data[i]
-
-for(let d of data) {
-    console.log(d)
+// 🔹 for loop
+for (let i = 0; i < data.length; i++) {
+  console.log(data[i]);
 }
 
-data.forEach(d => {
-    console.log(d)
-})
-forEach kono kichu return kore na (undefined return kore)
+// 🔹 for...of loop
+for (let d of data) {
+  console.log(d);
+}
 
-map
-const titleArr = data.map(d => `<span>${d.title}</span>`)
+// 🔹 forEach (কোনো return করে না)
+data.forEach((d) => {
+  console.log(d);
+});
 
-map new array return kore dey
+// 🔹 map (new array return করে)
+const titleArr = data.map((d) => `<span>${d.title}</span>`);
+console.log(titleArr);
 
-console.log(titleArr)
+// 🔹 join()
+const greetings = ["hello", "hi", "abcd"];
+console.log(greetings.join("-")); // hello-hi-abcd
 
-const arr = ['hello', 'hi', 'abcd']
-console.log(arr.join("-"))
-
-push -> array er sheshe element add kore 
-
-data.push(10)
-data.push(20)
+// 🔹 push()
+data.push(10);
+data.push(20);
 data.push({
-    title: 'this is a title'
-})
-console.log(data)
+  title: "this is a title",
+});
+console.log(data);
 
-const arr = [1, 2, 3, 3, 3, 4, 5, 6, 7]
+// 🔹 filter()
+const numbers = [1, 2, 3, 3, 3, 4, 5, 6, 7];
+const filteredArray = numbers.filter((num) => num !== 3);
+console.log(filteredArray); // [1, 2, 4, 5, 6, 7]
 
-const filteredArray = arr.filter(num => num !== 3)
-[1, 2, 4, 5, 6, 7]
-new array 
-console.log(filteredArray)
+const filteredData = data.filter((d) => d.id !== "c3r4r51n9lno");
+console.log(filteredData);
 
-const filteredData = data.filter(d => d.id !== 'c3r4r51n9lno')
-console.log(filteredData)
+// 🔹 find()
+const foundData = data.find((d) => d.id === "c1mpmx9dvrgo");
+console.log(foundData);
 
-const foundData = data.find(d => d.id === 'c1mpmx9dvrgo')
-one element return kore 
-undefined -- falsy --- false 
-console.log(foundData)
-
-if(foundData) {
-    console.log("Paaoa geche...")
+if (foundData) {
+  console.log("Paaoa geche...");
 } else {
-    console.log("Paoa jayni...")
+  console.log("Paoa jayni...");
 }
 
-const arr = ['hello', 'hi', 'dhjdgh']
-let container = ""
+// 🔹 forEach দিয়ে HTML string বানানো
+const words = ["hello", "hi", "dhjdgh"];
+let container = "";
 
-arr.forEach(a => {
-  container =  container + `<span>${a}</span>`;
-})
+words.forEach((a) => {
+  container = container + `<span>${a}</span>`;
+});
 
-console.log(container)
+console.log(container);
