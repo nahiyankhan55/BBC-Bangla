@@ -1,0 +1,59 @@
+/* Default styles already handled by Tailwind.
+   Extra customization with media queries. */
+
+/* Mobile (max-width: 640px) */
+@media (max-width: 640px) {
+  header img {
+    width: 120px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #newsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #bookmarkContainer {
+    padding: 10px;
+  }
+}
+
+/* Tablet (641px – 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  nav ul {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  main {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #newsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+  nav ul {
+    gap: 30px;
+    font-size: 18px;
+  }
+
+  main {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  #newsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
